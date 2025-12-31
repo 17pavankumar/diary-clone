@@ -129,6 +129,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email backend
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+<<<<<<< HEAD
 # Razorpay credentials
 RAZOR_KEY_ID = config('RAZOR_KEY_ID', default='')
 RAZOR_KEY_SECRET = config('RAZOR_KEY_SECRET', default='')
@@ -141,3 +142,19 @@ if not DEBUG:
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
+=======
+
+from decouple import config,Csv
+
+RAZOR_KEY_ID = config('RAZOR_KEY_ID')
+RAZOR_KEY_SECRET = config('RAZOR_KEY_SECRET')
+
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://api.razorpay.com'
+]
+
+TIME_ZONE = 'Asia/Kolkata'
+
+USE_TZ = True
+>>>>>>> 3ce6ec870fab52119caef2ea1909b55d4ab634e7
